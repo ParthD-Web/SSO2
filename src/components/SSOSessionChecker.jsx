@@ -24,13 +24,13 @@ const SSOSessionChecker = () => {
             error,
           );
 
-          // try {
-          //   await loginWithRedirect({
-          //     prompt: 'none',
-          //   });
-          // } catch (err) {
-          //   console.log('Silent SSO redirect failed', err);
-          // }
+          try {
+            await loginWithRedirect({
+              prompt: 'none',
+            });
+          } catch (err) {
+            console.log('Silent SSO redirect failed', err);
+          }
         } finally {
           setIsCheckingSession(false);
         }
