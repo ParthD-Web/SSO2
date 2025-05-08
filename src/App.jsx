@@ -21,6 +21,10 @@ function App() {
     handleRedirect();
   }, [navigate]);
 
+  useEffect(() => {
+    sessionStorage.removeItem('auth0.logout');
+  }, []);
+
   if (isLoading) {
     return <div>Loading...</div>;
   }
